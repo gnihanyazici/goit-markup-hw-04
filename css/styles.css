@@ -53,6 +53,27 @@ body {
     display: flex;
     text-decoration: none;
 } 
+
+.menu a {
+    position: relative;
+    text-decoration: none;
+}
+
+.menu a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: black;
+    width: 0;
+    transition: width 0.3s;
+    margin-top: 4px;
+}
+
+.menu a.active::after {
+    width: 100%;
+    /* aktif olan bağlantının genişliğini belirler */
+}
+
 ul {
     display: inline;
     list-style-type: none;
@@ -78,9 +99,12 @@ ul {
     box-sizing: border-box;
     padding: 150px;
     max-width: 1158px;
-    background-image: url(../images/people-office1.jpg);
+    background-image:
+        linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+        url(../images/people-office1.jpg);
     background-position: center center;
     background-size: cover;
+
 
 }
 .baslik h1{
@@ -109,7 +133,8 @@ button {
     display: block;
     margin: 0 auto;
 }
-button:hover {
+button:hover,
+button:focus {
     background-color: #404BBF;
     color: #FFFFFF;
     font-family: "roboto";
@@ -117,6 +142,7 @@ button:hover {
     font-size: 12px;
      width: 169;
     height: 56;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 section{
@@ -172,7 +198,6 @@ section{
 }
 
 
-
 h1,
 h2,
 h3,
@@ -219,6 +244,8 @@ ul {
     border: 1px solid #F4F4FD;
     background-color: #FFFFFF;   
     text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .containerop{
@@ -240,6 +267,12 @@ ul {
 
 .border{
     border: 1px solid #e7e9fc;
+}
+
+.border:hover,
+.border:focus {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    
 }
 
 h2 {
@@ -285,4 +318,25 @@ h2 {
 
 .studio1 {
     color: #F4F4FD;
+}
+
+.iconot {
+    width: 40px;
+    height: 40px;
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+}
+
+.iconft {
+    width: 40px;
+    height: 40px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: #4d5ae5; ;
+}
+
+.iconft:hover{
+    fill: #31d0aa;
 }
